@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Voting</title>
+    
+</head>
+<body>
+    <h1>Hasil Voting</h1>
+    {{if .}}
+        <ul>
+        {{range .}}
+            <li>{{.Nama}}: {{.Votes}} votes</li>
+        {{end}}
+        </ul>
+    {{else}}
+        <form action="/results" method="post">
+            <label for="password">Masukkan Password:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Submit</button>
+        </form>
+    {{end}}
+</body>
+</html>
